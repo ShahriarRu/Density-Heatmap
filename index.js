@@ -1,5 +1,9 @@
-let map, heatmap;
+const lat = document.querySelector("#lat");
+const long = document.querySelector("#long");
+const intens = document.querySelector("#intens");
+const btn = document.querySelector("#btn");
 
+let map, heatmap;
 function initMap() {
   var rajshahi = new google.maps.LatLng(24.361979, 88.635313);
   map = new google.maps.Map(document.getElementById("map"), {
@@ -12,6 +16,7 @@ function initMap() {
     data: getPoints(),
     map: map,
   });
+
   heatmap.set("radius", heatmap.get("radius") ? null : 15);
   heatmap.set("opacity", heatmap.get("opacity") ? null : 0.6);
 }
@@ -134,3 +139,9 @@ function getPoints() {
     { location: new google.maps.LatLng(24.366254, 88.635317), weight: 0.5 },
   ];
 }
+let latitude = +lat.value;
+let longitude = +long.value;
+
+btn.addEventListener("click", function () {
+  heatmap.data = new google.maps.LatLng(latitude, longitude);
+});

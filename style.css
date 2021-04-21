@@ -1,10 +1,6 @@
 /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
 @import url("https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,200;0,300;1,400&display=swap");
-#map {
-  min-height: 550px;
-  width: 70vw;
-}
 
 /* Optional: Makes the sample page fill the window. */
 html,
@@ -12,16 +8,55 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
+  background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin: 0 2rem;
+}
+
+.options {
+  width: 40%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  background-color: white;
+  margin-right: 2rem;
+  /* padding: 12% 1.5%; */
+  height: 550px;
+  -webkit-box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.3);
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  font-family: "Overpass", sans-serif;
+}
+
+#map {
+  height: 550px;
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.75);
 }
 
 .heading {
   font-family: "Overpass", sans-serif;
   position: relative;
-  margin-bottom: 1.5rem;
+  margin-bottom: 3rem;
+  color: rgb(87, 84, 84);
+  font-size: 1.2rem;
 }
 
 .heading::after {
@@ -34,4 +69,53 @@ body {
   top: 80%;
   left: 25%;
   border-radius: 5px;
+}
+
+input {
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px black solid;
+  text-align: center;
+  outline: none;
+}
+input:focus {
+  border: 2px solid#a8edea;
+}
+
+label {
+  margin-bottom: 0.3rem;
+  font-size: 1.2rem;
+}
+
+#btn {
+  padding: 0.7rem;
+  border-radius: 5px;
+  background: #a8edea;
+  border: none;
+  font-size: 1.2rem;
+  outline: none;
+  -webkit-box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.75);
+}
+
+#btn:hover {
+  cursor: pointer;
+}
+
+#btn:active {
+  box-shadow: none;
+}
+
+@media only screen and (max-width: 1200px) {
+  .heading {
+    font-size: 0.7rem;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  body {
+    background-color: yellow;
+  }
 }
