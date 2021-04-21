@@ -1,0 +1,37 @@
+/* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+@import url("https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,200;0,300;1,400&display=swap");
+#map {
+  min-height: 550px;
+  width: 70vw;
+}
+
+/* Optional: Makes the sample page fill the window. */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.heading {
+  font-family: "Overpass", sans-serif;
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.heading::after {
+  content: " ";
+  position: absolute;
+  width: 50%;
+  height: 5px;
+  background-color: rgb(255, 0, 0);
+  z-index: 10;
+  top: 80%;
+  left: 25%;
+  border-radius: 5px;
+}
